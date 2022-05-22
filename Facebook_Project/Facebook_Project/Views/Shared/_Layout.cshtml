@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            background-image: url('../../photos/MicrosoftTeams-image (1).png');
+            background-size: cover;
+            color:darksalmon;
+            font-size: large;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @{if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+                    {
+                        @Html.ActionLink("Facebook", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("My Profile", "Index", "Porfile", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                }
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @{if (Session["Iduser"] == "0" || Session["Iduser"] == null)
+                        {
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                        }
+                        else
+                        {
+
+                            <li>@Html.ActionLink("My Friends", "MyFriends", "Porfile")</li>
+                            <li>@Html.ActionLink("Friendship requests", "MyRequests", "Porfile")</li>
+                            <li>@Html.ActionLink("My Requests", "MyReq", "Porfile") </li>
+                            <li>@Html.ActionLink("People", "Index", "userinfoes")</li>
+                            <li>@Html.ActionLink("Edit", "Edit", "userinfoes")</li>
+                            <li>@Html.ActionLink("logout", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

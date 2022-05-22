@@ -1,0 +1,21 @@
+﻿@model Facebook_Project.Models.userinfo
+
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <br />
+    <br />
+    <br />
+    <img src="@Model.photo" height="200px" />
+    <h3>Frist Name : @Html.DisplayFor(model => model.Fname)</h3>
+    <h3>last Name : @Html.DisplayFor(model => model.lname)</h3>
+    <h3>Email : @Html.DisplayFor(model => model.email)</h3>
+    <br />
+    <br />
+    <h4>City : @Html.DisplayFor(model => model.city)</h4>
+    <h4>Country : @Html.DisplayFor(model => model.country)</h4>
+</div>
+<br />
+<br />
+<a href="/Friend/Addfriend/@Model.Id"><h2>Add Friend</h2></a>

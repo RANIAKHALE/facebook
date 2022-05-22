@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccountDatabaseModelStoreContainer" CdmEntityContainer="AccountDatabaseEntities">
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.comment">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="comment1" ColumnName="comment" />
+          <ScalarProperty Name="idpost" ColumnName="idpost" />
+          <ScalarProperty Name="iduserinfo" ColumnName="iduserinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="friendRequstes">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.friendRequste">
+        <MappingFragment StoreEntitySet="friendRequstes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_UserSender" ColumnName="id_UserSender" />
+          <ScalarProperty Name="id_userFriend" ColumnName="id_userFriend" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="friends">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.friend">
+        <MappingFragment StoreEntitySet="friends">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_User" ColumnName="id_User" />
+          <ScalarProperty Name="id_userFriend" ColumnName="id_userFriend" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="posts">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.post">
+        <MappingFragment StoreEntitySet="post">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="postone" ColumnName="postone" />
+          <ScalarProperty Name="iduserinfo" ColumnName="iduserinfo" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reacts">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.react">
+        <MappingFragment StoreEntitySet="reacts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Like" ColumnName="Like" />
+          <ScalarProperty Name="idpost" ColumnName="idpost" />
+          <ScalarProperty Name="iduserinfo" ColumnName="iduserinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userinfoes">
+      <EntityTypeMapping TypeName="AccountDatabaseModel.userinfo">
+        <MappingFragment StoreEntitySet="userinfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
